@@ -30,6 +30,7 @@
         .hw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
         .card { background: white; border-radius: 20px; padding: 25px; border: 1px solid #eee; position: relative; }
         .card.done { background: var(--done-bg); opacity: 0.6; }
+        .desc-text { white-space: pre-line; }
         
         .done-label { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 800; margin-top: 15px; }
         .done-label input { width: 22px; height: 22px; margin: 0; cursor: pointer; }
@@ -295,7 +296,7 @@
                             <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:bold; color:var(--muted);"><span>${it.cycle.toUpperCase()}</span><span style="cursor:pointer; color:var(--primary)" onclick='openHwModal(${JSON.stringify(it)}, ${it.oIdx}, "${it.type}")'>EDIT</span></div>
                             <div style="font-weight:900; font-size:1.4rem; margin:10px 0;">${it.name}</div>
                             ${it.desc ? `
-                            <div style="
+                            <div class="desc-text" style="
                                 font-size:13px;
                                 color:#000000;
                                 margin-bottom:12px;
